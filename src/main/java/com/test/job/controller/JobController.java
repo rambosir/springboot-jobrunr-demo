@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.time.Instant;
 
 import org.jobrunr.scheduling.JobScheduler;
+import org.jobrunr.scheduling.cron.Cron;
 import org.jobrunr.scheduling.cron.CronExpression;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -45,6 +46,8 @@ public class JobController {
 		jobScheduler.scheduleRecurrently(() -> sampleJobService.execute(name), "0 * * * * *");
 
 		// CronExpression.create(cron)
+		
+		//Cron.daily()
 
 		return "Job is scheduled.";
 	}
